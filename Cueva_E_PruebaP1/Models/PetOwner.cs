@@ -18,7 +18,7 @@ namespace Cueva_E_PruebaP1.Models
         public Pet? Pet { get; set; }
         public String IdDoctor { get; set; }
         [ForeignKey("IdDoctor")]
-        public Doctor Doctor { get; set; }
+        public Doctor? Doctor { get; set; }
 
     }
 }

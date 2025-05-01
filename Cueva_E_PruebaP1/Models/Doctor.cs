@@ -8,7 +8,7 @@ namespace Cueva_E_PruebaP1.Models
     {
         [Key]
         [Required]
-        public String Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(50)]

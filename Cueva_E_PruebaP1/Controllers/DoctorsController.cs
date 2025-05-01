@@ -26,15 +26,15 @@ namespace Cueva_E_PruebaP1.Controllers
         }
 
         // GET: Doctors/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int id)  // Cambiado de string a int
         {
-            if (id == null)
+            if (id == 0)
             {
                 return NotFound();
             }
 
             var doctor = await _context.Doctor
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);  // Cambiado de string a int
             if (doctor == null)
             {
                 return NotFound();
@@ -50,8 +50,6 @@ namespace Cueva_E_PruebaP1.Controllers
         }
 
         // POST: Doctors/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Experience,DateTime,Reason,TotalPrice,NeedMed")] Doctor doctor)
@@ -66,14 +64,14 @@ namespace Cueva_E_PruebaP1.Controllers
         }
 
         // GET: Doctors/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int id)  // Cambiado de string a int
         {
-            if (id == null)
+            if (id == 0)
             {
                 return NotFound();
             }
 
-            var doctor = await _context.Doctor.FindAsync(id);
+            var doctor = await _context.Doctor.FindAsync(id);  // Cambiado de string a int
             if (doctor == null)
             {
                 return NotFound();
@@ -82,11 +80,9 @@ namespace Cueva_E_PruebaP1.Controllers
         }
 
         // POST: Doctors/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Experience,DateTime,Reason,TotalPrice,NeedMed")] Doctor doctor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Experience,DateTime,Reason,TotalPrice,NeedMed")] Doctor doctor)
         {
             if (id != doctor.Id)
             {
@@ -117,15 +113,15 @@ namespace Cueva_E_PruebaP1.Controllers
         }
 
         // GET: Doctors/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int id)  // Cambiado de string a int
         {
-            if (id == null)
+            if (id == 0)
             {
                 return NotFound();
             }
 
             var doctor = await _context.Doctor
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);  // Cambiado de string a int
             if (doctor == null)
             {
                 return NotFound();
@@ -137,9 +133,9 @@ namespace Cueva_E_PruebaP1.Controllers
         // POST: Doctors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)  // Cambiado de string a int
         {
-            var doctor = await _context.Doctor.FindAsync(id);
+            var doctor = await _context.Doctor.FindAsync(id);  // Cambiado de string a int
             if (doctor != null)
             {
                 _context.Doctor.Remove(doctor);
@@ -149,9 +145,9 @@ namespace Cueva_E_PruebaP1.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DoctorExists(string id)
+        private bool DoctorExists(int id)  // Cambiado de string a int
         {
-            return _context.Doctor.Any(e => e.Id == id);
+            return _context.Doctor.Any(e => e.Id == id);  // Cambiado de string a int
         }
     }
 }
