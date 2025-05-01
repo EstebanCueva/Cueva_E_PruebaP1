@@ -16,6 +16,5 @@ namespace Cueva_E_PruebaP1.Data
 
         public DbSet<Cueva_E_PruebaP1.Models.Doctor> Doctor { get; set; } = default!;
         public DbSet<Cueva_E_PruebaP1.Models.Pet> Pet { get; set; } = default!;
-        public DbSet<Cueva_E_PruebaP1.Models.PetOwner> PetOwner { get; set; } = default!;
-    }
+        public DbSet<Cueva_E_PruebaP1.Models.PetOwner> PetOwner { get; set; } = default!;    }
 }

@@ -4,6 +4,7 @@ using Cueva_E_PruebaP1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cueva_E_PruebaP1.Migrations
 {
     [DbContext(typeof(Cueva_E_PruebaP1Context))]
-    partial class Cueva_E_PruebaP1ContextModelSnapshot : ModelSnapshot
+    [Migration("20250501134857_Migracion6")]
+    partial class Migracion6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

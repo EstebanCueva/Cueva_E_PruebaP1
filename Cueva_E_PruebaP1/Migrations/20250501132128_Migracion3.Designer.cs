@@ -4,6 +4,7 @@ using Cueva_E_PruebaP1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cueva_E_PruebaP1.Migrations
 {
     [DbContext(typeof(Cueva_E_PruebaP1Context))]
-    partial class Cueva_E_PruebaP1ContextModelSnapshot : ModelSnapshot
+    [Migration("20250501132128_Migracion3")]
+    partial class Migracion3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,8 +27,11 @@ namespace Cueva_E_PruebaP1.Migrations
 
             modelBuilder.Entity("Cueva_E_PruebaP1.Models.Doctor", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
@@ -45,9 +51,6 @@ namespace Cueva_E_PruebaP1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Doctor");
@@ -55,8 +58,11 @@ namespace Cueva_E_PruebaP1.Migrations
 
             modelBuilder.Entity("Cueva_E_PruebaP1.Models.Pet", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
@@ -99,13 +105,11 @@ namespace Cueva_E_PruebaP1.Migrations
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("IdDoctor")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdDoctor")
+                        .HasColumnType("int");
 
-                    b.Property<string>("IdPet")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdPet")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()

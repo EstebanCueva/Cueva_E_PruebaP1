@@ -5,7 +5,7 @@ namespace Cueva_E_PruebaP1.Models
     public class Pet
     {
         [Key]
-        public int Id { get; set; }
+        public String Id { get; set; }
         [Required]
         [StringLength(50)]
         public string Name { get; set; }

@@ -13,15 +13,12 @@ namespace Cueva_E_PruebaP1.Models
         public DateTime DateTime { get; set; } = DateTime.Now;
         public bool Pets { get; set; } //Si la persona tiene mas de una mascota, Si o no 
         public float budget { get; set; }
-        public int IdPet { get; set; }
+        public String IdPet { get; set; }
         [ForeignKey("IdPet")]
         public Pet? Pet { get; set; }
-        public int IdDoctor { get; set; }
+        public String IdDoctor { get; set; }
         [ForeignKey("IdDoctor")]
         public Doctor Doctor { get; set; }
-
-
-
 
     }
 }
